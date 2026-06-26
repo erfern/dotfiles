@@ -1,4 +1,3 @@
 #!/bin/sh
-if [ -n "$FIFO_UEBERZUG" ]; then
-	printf '{"action": "remove", "identifier": "PREVIEW"}\n' > "$FIFO_UEBERZUG"
-fi
+# clear the image displayed by ueberzug.
+[ -p "$FIFO" ] && echo '{"action":"remove","identifier":"lfpreview"}' > "$FIFO"

@@ -1,17 +1,25 @@
+#!/usr/bin/bash
 set ratios 1:2:3
 set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 
 cmd edit_detached ${{
-	 nohup alacritty --class helix -e /bin/helix "$f" >/dev/null 2>&1 &
+  if [ -d "$f" ]; then
+    setsid -f alacritty --class nvim -e /bin/nvim \
+      -c ":cd $f" -c ":Telescope find_files" >/dev/null 2>&1
+  else
+    setsid -f alacritty --class nvim -e /bin/nvim \
+      -c ":cd $(dirname "$f")" -- "$f" >/dev/null 2>&1
+  fi
 }}
 
 cmd open_detached_terminal ${{
-	 nohup alacritty --working-directory "$f" >/dev/null 2>&1 &
+  [[ -f "$f" ]] && f=$(dirname "$f")
+  nohup alacritty --working-directory "$f" >/dev/null 2>&1 &
 }} 
 
 cmd list_images ${{
-	nohup sxiv -t -b "$f" > /dev/null &
+	nohup swiv -t -b "$f" > /dev/null &
 }}
 
 map e edit_detached "$f"

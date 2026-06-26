@@ -15,7 +15,7 @@ SAVEHIST=1000
 # Variables
 #------------------------------
 export TERM="xterm-256color"
-export EDITOR="alacritty --class helix -e /bin/helix"
+export EDITOR="alacritty --class nvim -e /bin/nvim"
 export MANPAGER="sh -c 'col -bx | bat --theme=Dracula -l man -p'"
 export MANROFFOPT="-c"
 export HISTCONTROL=ignoredups:erasedups
@@ -23,7 +23,6 @@ export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/github -F /dev/null"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
@@ -57,7 +56,7 @@ bindkey "^[[F" end-of-line
 alias ls='exa -l -s type --color=always --group-directories-first'
 alias lsa='exa -al -s type --color=always --group-directories-first'
 alias grep='grep --color=always'
-alias cat='bat --style="plain" --paging=never --theme="Catppuccin-mocha"'
+alias cat='bat --style="plain" --paging=never --theme=Dracula'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias mv='mv -i'

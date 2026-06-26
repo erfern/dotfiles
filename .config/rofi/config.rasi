@@ -1,146 +1,95 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
 * {
-    /* Dracula theme colour palette */
-    drac-bgd: #1e1e2e;
-    drac-cur: #45475a;
-    drac-fgd: #cdd6f4;
-    drac-cmt: #6272a4;
-    drac-cya: #cdd6f4;
-    drac-red: #89dceb;
-    drac-ora: #a6e3a1;
-    drac-pnk: #cba6f7;
-    drac-pur: #bd93f9;
-    drac-yel: #f1fa8c;
-
-    font: "Caskaydia Cove Nerd Font 13";
-
-    foreground: @drac-fgd;
-    background-color: @drac-bgd;
-    active-background: @drac-pnk;
-    urgent-background: @drac-red;
-    urgent-foreground: @drac-bgd;
-    
-    selected-background: @active-background;
-    selected-urgent-background: @urgent-background;
-    selected-active-background: @active-background;
-    separatorcolor: @drac-pnk;
-    bordercolor: @drac-pnk;
-}
-
-#window {
-    // location: north;
-	  // x-offset: 36.9%;
-	  // y-offset: 1.1%;
-    background-color: @background-color;
-    border:           3;
-    border-radius: 1;
-    border-color: @bordercolor;
-    padding:          3;
-    width: 25%;
-    height: 25%;
-}
-#mainbox {
-    border:  0;
-    padding: 5;
-}
-#message {
-    border:       1px dash 0px 0px ;
-    border-color: @separatorcolor;
-    padding:      1px ;
-}
-#textbox {
+    font: "Caskaydia Cove Nerd Font 10";
+    foreground: #cdd6f4;
+    background: #1e1e2e;
     text-color: @foreground;
+    background-color: @background;
 }
-#listview {
-    fixed-height: 0;
-    border:       2px dash 0px 0px ;
-    border-color: @drac-cya;
-    spacing:      2px ;
-    scrollbar:    false;
-    padding:      2px 0px 0px ;
+window {
+    location: south;
+    width: 100%;
+
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
-#element {
-    border:  0;
-    padding: 1px ;
+mainbox {
+    orientation: horizontal;
 }
-#element.normal.normal {
-    background-color: @background-color;
-    text-color:       @foreground;
+message {
+    expand: true;
+    border: 0px;
 }
-#element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+textbox {
+    markup: true;
 }
-#element.normal.active {
-    background-color: @active-background;
-    text-color:       @background-color;
+listview {
+    layout: horizontal;
+    scrollbar: false;
+    lines: 20;
+
+    spacing: 5px ;
+    border: 0px;
+    padding: 0px;
 }
-#element.selected.normal {
-    background-color: @selected-background;
-    text-color:       @background-color;
+element {
+    highlight: bold;
+    // width: 30%;
 }
-#element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @foreground;
-}
-#element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @background-color;
-}
-#element.alternate.normal {
-    background-color: @background-color;
-    text-color:       @foreground;
-}
-#element.alternate.urgent {
-    background-color: @urgent-background;
-    text-color:       @foreground;
-}
-#element.alternate.active {
-    background-color: @active-background;
-    text-color:       @foreground;
-}
-#scrollbar {
-    width:        2px ;
-    border:       0;
-    handle-width: 8px ;
-    padding:      0;
-}
-#sidebar {
-    border:       2px dash 0px 0px ;
-    border-color: @separatorcolor;
-}
-#button.selected {
-    background-color: @selected-background;
-    text-color:       @foreground;
-}
-#inputbar {
-    spacing:    0;
-    text-color: @foreground;
-    padding:    1px ;
-}
-#case-indicator {
-    spacing:    0;
-    text-color: @foreground;
-}
-#entry {
-    spacing:    0;
-    text-color: @drac-cya;
-    placeholder: "...";
-}
-#prompt {
-    spacing:    0;
-    text-color: @drac-red;
-}
-#inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-#textbox-prompt-colon {
-    expand:     false;
-    str:        " > ";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @drac-red;
-}
-element-text, element-icon {
+element-text {
     background-color: inherit;
-    text-color: inherit;
+    text-color:       inherit;
+}
+element-text selected{
+    background-color: inherit;
+    text-color:       #74c7ec;
+}
+element.normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+element.normal.active {
+    background-color: @background;
+    text-color:       @foreground;
+}
+element.selected.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+element.selected.active {
+    background-color: @background;
+    text-color:       @foreground;
+}
+element.alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+element.alternate.active {
+    background-color: @background;
+    text-color:       @foreground;
 }
 
+button.selected {
+    background-color: @background;
+    text-color:       @foreground;
+}
+entry {
+    placeholder: "";
+}
+prompt {
+    text-color: @foreground;
+}
+inputbar {
+    children:   [ textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    str: "$";
+    margin: 0px 0px 0px 5px;
+    text-color: #a6e3a1;
+}
