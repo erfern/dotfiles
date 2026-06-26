@@ -1,6 +1,0 @@
-theme = "custom"
-
-[editor.cursor-shape]
-insert = "underline"
-normal = "block"
-select = "block"
