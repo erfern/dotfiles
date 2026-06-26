@@ -1,0 +1,4 @@
+evdev:input:*
+ ID_VENDOR_ID=1c4f
+ ID_MODEL_ID=0084
+ KEYBOARD_KEY_70065=leftmeta
