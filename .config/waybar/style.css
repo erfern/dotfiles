@@ -1,0 +1,195 @@
+@import "mocha.css";
+
+/* */
+* {
+    min-height: 0;
+    font-family: Caskaydia Cove Nerd Font, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+/* Gaps between modules */
+#waybar {
+    background-color: transparent;
+}
+
+/* modules */
+#waybar .module {
+    color: @text;
+    padding: 0px 0px;
+    margin: -10px 5px -10px;
+}
+
+#waybar .module:hover {
+    color: @subtext1;
+}
+
+/* BUTTON */
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 2px;
+    padding: 0px 5px;
+    margin: 5px 0px;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px transparent;
+}
+
+/* WORKSPACES */
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 6px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    color: @text;
+    animation: ws_normal 20s ease-in-out 1;
+}
+
+#workspaces button.active {
+    background: @mauve;
+    color: @crust;
+    border-radius: 6px;
+    margin-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 0px;
+    animation: ws_active 20s ease-in-out 1;
+    transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: @mantle;
+    color: @text;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* TAGS */
+#tags button {
+    color: @mauve;
+    background: @base;
+    border-radius: 0px;
+    padding: 0px 0px;
+    margin: 5px 0px;
+}
+
+#tags button.occupied {
+    color: @mantle;
+}
+
+#tags button.focused {
+    color: @sky;
+}
+
+#tags button.urgent {
+    color: @red;
+}
+
+/* GROUPS */
+#group-10,
+#group-9,
+#group-8,
+#group-7,
+#group-6,
+#group-10,
+#group-5,
+#group-4,
+#group-3,
+#group-2,
+#group-1 {
+    background: @base; /* linear-gradient(145deg, #1e1e2e 0%, #181825 100%); */
+    margin: 3px 1px;
+    border-radius: 6px;
+}
+
+/* CUSTOM MODULES */
+#custom-discord,
+#custom-reddit,
+#custom-instagram,
+#catppuccin-theme,
+#custom-whatsapp,
+#custom-firefox,
+#custom-spotify,
+#custom-github {
+  border: 2px;
+  font-size: 14px;
+}
+
+#custom-keybinds,
+#bluetooth,
+#custom-pkg-aur {
+  font-size: 13px;
+  
+}
+
+#custom-next, #custom-pause, #custom-previous {
+  font-size: 15px;
+}
+
+#custom-notification {
+    color: @text;
+}
+
+/* MODULES */
+window#waybar #cpu {
+  color: @sapphire;
+}
+
+window#waybar #temperature {
+  color: @red;
+}
+
+window#waybar #memory {
+  color: @green;
+}
+
+window#waybar #disk {
+  color: @peach;
+}
+
+window#waybar #wireplumber {
+  color: @lavender;
+}
+
+window#waybar #wireplumber.muted {
+  color: @red;
+}
+
+window#waybar #clock {
+  color: @lavender;
+}
+
+window#waybar.empty #window {
+    margin: 0px 0px 0px;  /* transparent when empty */
+}
+
+#network.disconnected,
+#pulseaudio.muted,
+#wireplumber.muted {
+    color: @red;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: rgba(166, 227, 161, 0.60);
+    padding: 5px 10px;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
