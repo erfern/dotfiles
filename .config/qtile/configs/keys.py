@@ -14,7 +14,7 @@ MOUSE = [
          start=lazy.window.get_position()),
     Drag([m4], "Button3", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
-    Click([m4], "Button2", lazy.window.disable_floating())
+    Click([m4, "shift"], "Button1", lazy.window.disable_floating())
 ]
 
 window_focus_keys = [
@@ -50,8 +50,10 @@ menus_keys = [
 ]
 
 audio_keys = [
-    Key([m4], 'equal', lazy.widget['pulsevolume'].increase_vol(5)),
-    Key([m4], 'minus', lazy.widget['pulsevolume'].decrease_vol(5)),
+    Key([m4], 'equal', lazy.spawn('pactl set-sink-volume 0 +5%')),
+    Key([m4], 'minus', lazy.spawn('pactl set-sink-volume 0 -5%')),
+    # Key([m4], 'equal', lazy.widget['pulsevolume'].increase_vol(5)),
+    # Key([m4], 'minus', lazy.widget['pulsevolume'].decrease_vol(5)),
     Key([m4], 'm', lazy.widget['pulsevolume'].mute()),
 ]
 

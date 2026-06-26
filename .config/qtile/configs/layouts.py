@@ -10,7 +10,7 @@ from extra.palettes import PALETTE
 
 monad_options = {
     'border_width': 3,
-    'margin': 10,
+    'margin': 5,
     'border_focus': PALETTE[2],
     'border_normal': PALETTE[3],
     'align': 1,
@@ -21,7 +21,7 @@ monad_options = {
 }
 
 max_options = {
-    'margin': 10,
+    'margin': 5,
     'border_width': 3,
     'border_focus': PALETTE[3]
 }

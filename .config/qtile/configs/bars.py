@@ -35,7 +35,7 @@ widgets = [
         text="\ue0c0 ",
         background=PALETTE[3],
         foreground=PALETTE[0]),
-    widget.Spacer(background=PALETTE[3]),
+    widget.Spacer(background=PALETTE[3]), # NOTE: HELIX 50x
     widget.TextBox(
         fontsize=20,
         padding=0,
@@ -71,16 +71,16 @@ widgets = [
         measure_mem="M",
         background=PALETTE[0],
         foreground=PALETTE[1]),
-    widget.TextBox(
-        fontsize=16,
-        text="\uf11b",
-        background=PALETTE[0],
-        foreground=PALETTE[2]),
-    widget.NvidiaSensors(
-        format="{temp}°C",
-        padding=10,
-        background=PALETTE[0],
-        foreground=PALETTE[1]),
+    # widget.TextBox(
+    #     fontsize=16,
+    #     text="\uf11b",
+    #     background=PALETTE[0],
+    #     foreground=PALETTE[2]),
+    # widget.NvidiaSensors(
+    #     format="{temp}°C",
+    #     padding=10,
+    #     background=PALETTE[0],
+    #     foreground=PALETTE[1]),
     widget.TextBox(
         fontsize=16,
         text="\ue638",
